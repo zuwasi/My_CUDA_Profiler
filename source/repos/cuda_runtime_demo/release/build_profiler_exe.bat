@@ -17,10 +17,9 @@ REM Change to parent directory where cuda_profiler_gui.py is located
 cd ..
 
 REM Build single executable (all dependencies bundled)
-pyinstaller --onefile ^
+python -m PyInstaller --onefile ^
     --windowed ^
     --name "CUDA_Profiler_GUI" ^
-    --icon="%SystemRoot%\System32\shell32.dll,16" ^
     --hidden-import matplotlib ^
     --hidden-import numpy ^
     --hidden-import tkinter ^
