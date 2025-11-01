@@ -64,17 +64,20 @@ install_profiler_dependencies.bat
 
 ### Option 1: Run from Source
 ```cmd
-git clone <repository-url>
-cd <repository-folder>
+git clone https://github.com/zuwasi/My_CUDA_Profiler.git
+cd My_CUDA_Profiler/source/repos/cuda_runtime_demo
+cd release
 install_profiler_dependencies.bat
+cd ..
 python cuda_profiler_gui.py
 ```
 
 ### Option 2: Build Standalone Executable
 ```cmd
+cd source/repos/cuda_runtime_demo/release
 build_profiler_exe.bat
 ```
-Creates: `dist\CUDA_Profiler_GUI.exe` (standalone, no Python needed)
+Creates: `release\CUDA_Profiler_GUI.exe` (standalone, no Python needed)
 
 ## Usage
 
@@ -82,6 +85,7 @@ Creates: `dist\CUDA_Profiler_GUI.exe` (standalone, no Python needed)
 
 1. Launch the application:
    ```cmd
+   cd source/repos/cuda_runtime_demo
    python cuda_profiler_gui.py
    ```
 
@@ -141,21 +145,24 @@ build_optimized.bat
 
 ```
 .
-├── cuda_profiler_gui.py              # Main GUI application
-├── cuda_profiler_gui_admin.bat       # Launch with admin privileges
-├── install_profiler_dependencies.bat # Install Python dependencies
-├── build_profiler_exe.bat            # Build standalone executable
-├── build_profiler_folder.bat         # Build folder distribution
-├── PACKAGING_GUIDE.md                # Distribution guide
-├── source/
-│   └── repos/
-│       └── cuda_runtime_demo/
-│           ├── cuda_runtime_demo/
-│           │   ├── main.cu                    # Original CUDA code
-│           │   ├── main_optimized.cu          # Optimized version
-│           │   └── build_optimized.bat        # Build script
-│           └── OPTIMIZATION_GUIDE.md          # Optimization explanations
-└── README.md
+├── README.md
+├── PACKAGING_GUIDE.md
+├── GITHUB_SETUP.md
+├── .gitignore
+└── source/
+    └── repos/
+        └── cuda_runtime_demo/
+            ├── cuda_profiler_gui.py           # Main GUI application
+            ├── OPTIMIZATION_GUIDE.md          # Optimization explanations
+            ├── release/                       # Distribution folder
+            │   ├── install_profiler_dependencies.bat
+            │   ├── build_profiler_exe.bat     # Build standalone executable
+            │   ├── build_profiler_folder.bat  # Build folder distribution
+            │   └── README.md                  # Release guide
+            └── cuda_runtime_demo/
+                ├── main.cu                    # Original CUDA code
+                ├── main_optimized.cu          # Optimized version
+                └── build_optimized.bat        # Build script
 ```
 
 ## Metrics Tracked

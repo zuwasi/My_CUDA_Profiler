@@ -12,6 +12,6 @@ echo Installation Complete!
 echo ========================================
 echo.
 echo You can now run the CUDA Profiler GUI:
-echo python cuda_profiler_gui.py
+echo python ..\cuda_profiler_gui.py
 echo.
 pause
